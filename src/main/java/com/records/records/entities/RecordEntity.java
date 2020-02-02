@@ -1,14 +1,15 @@
-package com.example.entities;
+package com.records.records.entities;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table (name = "Records")
+@XmlRootElement(name = "record")
 public class RecordEntity {
 
-    @JsonProperty("X")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long recordID;
@@ -41,6 +42,7 @@ public class RecordEntity {
         this.date = date;
     }
 
+    @XmlElement
     public Long getRecordID() {
         return recordID;
     }
@@ -49,6 +51,7 @@ public class RecordEntity {
         this.recordID = recordID;
     }
 
+    @XmlElement
     public String getName() {
         return name;
     }
@@ -57,6 +60,7 @@ public class RecordEntity {
         this.name = name;
     }
 
+    @XmlElement
     public String getPhone() {
         return phone;
     }
@@ -65,6 +69,7 @@ public class RecordEntity {
         this.phone = phone;
     }
 
+    @XmlElement
     public String getCompany() {
         return company;
     }
@@ -73,6 +78,7 @@ public class RecordEntity {
         this.company = company;
     }
 
+    @XmlElement
     public String getStreet() {
         return street;
     }
@@ -81,6 +87,7 @@ public class RecordEntity {
         this.street = street;
     }
 
+    @XmlElement
     public String getCity() {
         return city;
     }
@@ -89,6 +96,7 @@ public class RecordEntity {
         this.city = city;
     }
 
+    @XmlElement
     public String getMail() {
         return mail;
     }
@@ -97,6 +105,7 @@ public class RecordEntity {
         this.mail = mail;
     }
 
+    @XmlElement
     public String getCountry() {
         return country;
     }
@@ -105,6 +114,7 @@ public class RecordEntity {
         this.country = country;
     }
 
+    @XmlElement
     public String getDate() {
         return date;
     }
