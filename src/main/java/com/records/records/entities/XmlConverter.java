@@ -1,32 +1,29 @@
 package com.records.records.entities;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+import java.io.File;
 import java.util.List;
 
 public class XmlConverter {
-    @XmlRootElement(name = "records")
-    public class Records {
 
+    public List<RecordEntity> xmlToObjects(File file) {
+        try {
 
-        List<RecordEntity> records;
+            //File file = new File(XmlToObjects.class.getClassLoader().getResource("records.xml").getFile());
+            JAXBContext jaxbContext = JAXBContext.newInstance(Records.class);
 
-        public Records(List<RecordEntity> records) {
-            this.records = records;
+            Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+            Records que = (Records) jaxbUnmarshaller.unmarshal(file);
+            return que.getRecords();
+
+        } catch (JAXBException e) {
+            e.printStackTrace();
         }
 
-        @XmlElement(name = "record")
-        public List<RecordEntity> getRecords() {
-            return records;
-        }
+        return null;
 
-        public void setRecords(List<RecordEntity> records) {
-            this.records = records;
-        }
-
-        public Records() {
-        }
     }
-
 
 }
