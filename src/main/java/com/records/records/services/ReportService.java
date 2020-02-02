@@ -1,8 +1,7 @@
-package com.example.services;
+package com.records.records.services;
 
-import com.example.entities.RecordEntity;
-import com.example.repositories.RecordRepository;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.records.records.entities.RecordEntity;
+import com.records.records.repositories.RecordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
