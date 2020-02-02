@@ -23,26 +23,30 @@ public class RecordEntity {
     private String street;
     @Column(name = "city")
     private String city;
-    @Column(name = "mail")
-    private String mail;
+    @Column(name = "Email")
+    private String Email;
+
+
     @Column(name = "country")
     private String country;
     @Column(name = "date")
     private String date;
 
-    public RecordEntity(Long recordID, String name, String phone, String company, String street, String city, String mail, String country, String date) {
+    public RecordEntity() {
+    }
+
+    public RecordEntity(Long recordID, String name, String phone, String company, String street, String city, String Email, String country, String date) {
         this.recordID = recordID;
         this.name = name;
         this.phone = phone;
         this.company = company;
         this.street = street;
         this.city = city;
-        this.mail = mail;
+        this.Email = Email;
         this.country = country;
         this.date = date;
     }
 
-    @XmlElement
     public Long getRecordID() {
         return recordID;
     }
@@ -51,7 +55,7 @@ public class RecordEntity {
         this.recordID = recordID;
     }
 
-    @XmlElement
+    @XmlElement(name = "Name")
     public String getName() {
         return name;
     }
@@ -60,7 +64,7 @@ public class RecordEntity {
         this.name = name;
     }
 
-    @XmlElement
+    @XmlElement(name = "Phone")
     public String getPhone() {
         return phone;
     }
@@ -69,7 +73,7 @@ public class RecordEntity {
         this.phone = phone;
     }
 
-    @XmlElement
+    @XmlElement(name = "Company")
     public String getCompany() {
         return company;
     }
@@ -78,7 +82,7 @@ public class RecordEntity {
         this.company = company;
     }
 
-    @XmlElement
+    @XmlElement(name = "Street")
     public String getStreet() {
         return street;
     }
@@ -87,7 +91,7 @@ public class RecordEntity {
         this.street = street;
     }
 
-    @XmlElement
+    @XmlElement(name = "City")
     public String getCity() {
         return city;
     }
@@ -96,16 +100,15 @@ public class RecordEntity {
         this.city = city;
     }
 
-    @XmlElement
-    public String getMail() {
-        return mail;
+    @XmlElement(name = "Email")
+    public String getEmail() {
+        return Email;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setEmail(String Email) {
+        this.Email = Email;
     }
-
-    @XmlElement
+    @XmlElement(name = "Country")
     public String getCountry() {
         return country;
     }
@@ -114,7 +117,7 @@ public class RecordEntity {
         this.country = country;
     }
 
-    @XmlElement
+    @XmlElement(name = "Date")
     public String getDate() {
         return date;
     }
